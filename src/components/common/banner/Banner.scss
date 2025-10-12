@@ -1,0 +1,118 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.banner {
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+    @include respond("sm") {
+      width: 100%;
+      height: auto;
+    }
+
+    @include respond("md") {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.wrapper-title {
+  position: absolute;
+  width: 100%;
+  max-width: 960px;
+  min-height: 260px;
+  bottom: 0;
+  left: 75px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: self-start;
+  padding: 50px 110px 0;
+  color: #333333;
+  background-color: #fff;
+  border-top-right-radius: 50px;
+  @include respond("sm") {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 0;
+    padding: 20px 20px 0;
+  }
+
+  @include respond("md") {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 0;
+    padding: 20px 20px 0;
+  }
+  .wrapper-title-course {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include respond("sm") {
+      margin-bottom: 20px;
+    }
+
+    @include respond("md") {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 16px;
+      color: #23085a;
+      font-weight: 700;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 28px;
+        width: 1px;
+        background: #666666;
+        top: 50%;
+        left: -15px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .wrapper-title-des {
+    margin-top: 40px;
+    @include respond("sm") {
+      margin: 0;
+    }
+
+    @include respond("md") {
+      margin: 0;
+    }
+
+    p {
+      font-size: 40px;
+      font-weight: 700;
+      color: #23085a;
+      @include respond("sm") {
+        font-size: 32px;
+      }
+
+      @include respond("md") {
+        font-size: 32px;
+      }
+      a {
+        margin-right: 6px;
+        text-decoration: underline !important;
+        color: #23085a;
+
+        @include respond("sm") {
+          margin: 0px;
+        }
+
+        @include respond("md") {
+          margin: 0px;
+        }
+      }
+    }
+  }
+}

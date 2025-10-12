@@ -1,0 +1,22 @@
+// _variables.scss
+$primary-color: #009739;
+$secondary-color: #00b44a;
+$text-color: #333;
+$font-main: 'Inter', sans-serif;
+
+$container-width: 1200px;
+$breakpoint-md: 768px;
+// === Breakpoints ===
+$breakpoint-xs: 480px;   // Mobile nhỏ
+$breakpoint-sm: 768px;   // Tablet dọc
+$breakpoint-md: 1024px;  // Tablet ngang / Laptop nhỏ
+$breakpoint-lg: 1200px;  // Desktop
+$breakpoint-xl: 1440px;  // Màn to
+
+$breakpoints: (
+  "xs": $breakpoint-xs,
+  "sm": $breakpoint-sm,
+  "md": $breakpoint-md,
+  "lg": $breakpoint-lg,
+  "xl": $breakpoint-xl
+);

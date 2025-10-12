@@ -1,0 +1,105 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/variables";
+
+.section__group {
+  padding: 80px 0;
+  background-color: #23085a;
+
+  .section__container {
+    .section__title {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+      color: #fff;
+      font-size: 40px;
+      line-height: 140%;
+      text-align: center;
+      margin-bottom: 60px;
+
+      @include respond("sm") {
+        width: 100%;
+        max-width: 370px;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      @include respond("md") {
+        width: 100%;
+        max-width: 370px;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .section__wrapper {
+      width: 100%;
+      max-width: 1330px;
+      margin: 0 auto;
+      padding: 0 20px;
+
+      .wrapper__content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 120px 50px 120px 80px;
+      }
+      .wrapper__title {
+        font-size: 40px;
+        line-height: 125%;
+        color: #23085a;
+        margin-bottom: 25px;
+      }
+
+      .wrapper__description {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 12px;
+      }
+
+      ul {
+        padding-left: 16px;
+
+        li {
+          list-style-type: disc !important;
+          line-height: 1.4;
+          font-size: 18px;
+        }
+      }
+
+      .wrapper__btn {
+        width: 220px;
+        min-width: 220px;
+        min-height: 50px;
+        background-color: #23085a;
+        border-radius: 25px;
+        opacity: 1;
+        padding: 5px 30px;
+        margin-top: 20px;
+        a {
+          color: #fff;
+          font-size: 16px;
+        }
+      }
+
+      .wrapper__items {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 32px;
+
+        @include respond("sm") {
+          grid-template-columns: auto;
+        }
+
+        @include respond("md") {
+          grid-template-columns: auto;
+        }
+      }
+    }
+  }
+}

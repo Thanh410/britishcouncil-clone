@@ -1,0 +1,335 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.navbar {
+  background-color: #009739;
+
+  .region {
+    display: flex;
+    flex-direction: column;
+    width: 1360px;
+    margin: auto;
+    padding-top: 30px;
+
+    @include respond("sm") {
+      width: 100%;
+      padding: 20px 15px;
+    }
+
+    @include respond("md") {
+      width: 100%;
+      padding: 20px 15px 0;
+    }
+    .region-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  /* === LEFT: LOGO === */
+  .navbar-left {
+    a {
+      display: flex;
+      gap: 32px;
+      color: white;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      img {
+        @include respond("sm") {
+          width: 80px;
+        }
+        @include respond("md") {
+          width: 80px;
+        }
+      }
+      h1.name {
+        color: #fff;
+        font-size: 21px;
+        font-weight: 700;
+        position: relative;
+        @include respond("sm") {
+          font-size: 16px;
+          margin-top: 0;
+        }
+        @include respond("md") {
+          font-size: 16px;
+          margin-top: 0;
+        }
+      }
+      h1.name::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 38px;
+        background-color: #fff;
+        top: 50%;
+        left: -16px;
+        transform: translateY(-50%);
+
+        @include respond("sm") {
+          height: 21px;
+        }
+        @include respond("md") {
+          height: 21px;
+        }
+      }
+    }
+  }
+
+  /* === RIGHT: SEARCH + MENU === */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    /* --- Search box --- */
+    .search-box {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .search-input {
+        width: 0;
+        opacity: 0;
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+      }
+
+      &.active .search-input {
+        width: 350px;
+        opacity: 1;
+        margin-right: 5px;
+
+        @include respond("sm") {
+          width: 100%;
+          position: fixed;
+          height: 50px;
+          top: 0;
+          right: 0;
+          left: 0;
+          border-radius: 0;
+        }
+        @include respond("md") {
+          width: 50px;
+          height: 50px;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          right: 0;
+          left: 0;
+          border-radius: 0;
+        }
+      }
+
+      .search-icon {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+
+        @include respond("sm") {
+          width: 20px;
+        }
+        @include respond("md") {
+          width: 20px;
+        }
+      }
+    }
+
+    /* --- Menu --- */
+    .menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 15px;
+      @include respond("sm") {
+        display: none;
+      }
+
+      li {
+        position: relative;
+        padding-left: 12px;
+
+        /* Line dọc */
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 16px;
+          background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.3s ease;
+
+          &:hover {
+            text-decoration: underline;
+            color: #5deb4b;
+          }
+        }
+      }
+    }
+  }
+}
+// MENU
+.region-bottom {
+  margin-top: 30px;
+
+  .region__toggle-menu {
+    display: none;
+
+    @include respond("sm") {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    .region__menu {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .mobile-menu-icon {
+      color: #fff;
+    }
+  }
+
+  .hide-menu {
+    display: none;
+  }
+  .menu-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: #009739;
+    @include respond("sm") {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    @include respond("md") {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    > li {
+      // chỉ áp dụng cho menu cấp 1
+      position: relative;
+      cursor: pointer;
+
+      > a {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        padding: 20px 15px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #5deb4b;
+        }
+        @include respond("sm") {
+          padding: 0;
+        }
+
+        @include respond("md") {
+          padding: 10px 0;
+        }
+      }
+      &:first-child > a {
+        padding-left: 0;
+      }
+      /* === Dropdown Menu (menu con) === */
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        min-width: 200px;
+        list-style: none;
+        padding: 8px 0;
+        margin: 0;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        animation: fadeSlideOut 0.3s forwards;
+        z-index: 999;
+
+        // reset style trong submenu
+        li {
+          position: relative;
+
+          a {
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+            color: #333;
+            padding: 10px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: #f3f3f3;
+              color: #009739;
+            }
+          }
+        }
+      }
+
+      // hover hiển thị dropdown
+      &:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        animation: fadeSlideIn 0.35s forwards;
+      }
+    }
+  }
+}
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
