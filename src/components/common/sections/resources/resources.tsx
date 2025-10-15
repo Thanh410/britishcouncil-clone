@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./resources.scss";
 import SliderCourses from "../../slider/slider";
 import { coursesData } from "../../../../data/courcesData";
