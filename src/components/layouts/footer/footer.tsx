@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./footer.scss";
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from "lucide-react";
 
