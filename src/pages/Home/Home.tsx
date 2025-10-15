@@ -1,4 +1,4 @@
-import React from "react";
+
 import Content from "../../components/common/sections/content/content";
 import Header from "../../components/layouts/header/header";
 import Banner from "../../components/common/banner/Banner";
